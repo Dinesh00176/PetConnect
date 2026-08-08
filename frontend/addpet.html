@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Add a Pet - PetConnect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><i class="fa-solid fa-paw"></i></span>
+      <span class="logo-text">PetConnect<small>Find your perfect companion.</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt</a>
+      <a href="addpet.html" class="active">Add a Pet</a>
+      <a href="mypets.html" id="myPetsLink" style="display:none;">My Pets</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-login" id="navAuthBtn"><i class="fa-regular fa-user"></i> Login / Sign Up</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="featured" style="padding-top:60px;">
+  <div class="section-container">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-paw"></i> List a Pet for Adoption</h2>
+    </div>
+
+    <form id="addPetForm" class="form-card" enctype="multipart/form-data" novalidate>
+      <div class="form-grid">
+        <div class="form-group">
+          <label for="name">Pet Name *</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Bruno" required />
+        </div>
+
+        <div class="form-group">
+          <label for="species">Species *</label>
+          <select id="species" name="species" required>
+            <option value="" disabled selected>Select species</option>
+            <option value="Dog">Dog</option>
+            <option value="Cat">Cat</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="breed">Breed *</label>
+          <input type="text" id="breed" name="breed" placeholder="e.g. Labrador" required />
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender *</label>
+          <select id="gender" name="gender" required>
+            <option value="" disabled selected>Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="ageValue">Age *</label>
+          <div class="age-row">
+            <input type="number" id="ageValue" name="ageValue" placeholder="e.g. 3" min="0" required />
+            <select id="ageUnit" name="ageUnit">
+              <option value="Weeks">Weeks</option>
+              <option value="Months" selected>Months</option>
+              <option value="Years">Years</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="location">Location *</label>
+          <input type="text" id="location" name="location" placeholder="e.g. Chennai" required />
+        </div>
+
+        <div class="form-group full">
+          <label for="description">Description</label>
+          <textarea id="description" name="description" placeholder="Tell adopters about this pet's personality, health, and habits..."></textarea>
+        </div>
+
+        <div class="form-group full">
+          <label>Pet Photo</label>
+          <label class="file-drop" id="fileDropLabel">
+            <i class="fa-solid fa-cloud-arrow-up"></i>
+            <span id="fileDropText">Click to upload a photo (JPG, PNG, WEBP — max 5MB)</span>
+            <input type="file" id="image" name="image" accept="image/*" />
+          </label>
+          <div class="file-preview" id="filePreview">
+            <img id="filePreviewImg" src="" alt="Preview" />
+          </div>
+        </div>
+      </div>
+
+      <div class="form-submit-row">
+        <button type="submit" class="btn btn-primary" id="submitBtn">
+          <i class="fa-solid fa-paw"></i> Add Pet
+        </button>
+        <span class="form-msg" id="formMsg"></span>
+      </div>
+    </form>
+
+    <div class="state-box" id="addPetLoginNotice" style="display:none;">
+      <i class="fa-solid fa-lock"></i>
+      <h3>Please log in to list a pet</h3>
+      <p>We ask for a quick login so we know who to reach if there are questions about a listing.</p>
+      <a href="login.html" class="btn btn-primary" style="margin-top:16px; display:inline-flex;"><i class="fa-solid fa-right-to-bracket"></i> Login / Sign Up</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-container footer-grid">
+    <div>
+      <a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><span class="logo-text">PetConnect</span></a>
+      <p>Find your perfect companion. Give pets a loving home.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt a Pet</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p><i class="fa-solid fa-envelope"></i> hello@petconnect.com</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; 2026 PetConnect. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

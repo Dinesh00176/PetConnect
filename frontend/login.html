@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Login / Sign Up - PetConnect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><i class="fa-solid fa-paw"></i></span>
+      <span class="logo-text">PetConnect<small>Find your perfect companion.</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt</a>
+      <a href="addpet.html">Add a Pet</a>
+      <a href="mypets.html" id="myPetsLink" style="display:none;">My Pets</a>
+      <a href="adoptions.html">Adoption Records</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-login" id="navAuthBtn"><i class="fa-regular fa-user"></i> Login / Sign Up</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="featured" style="padding-top:60px;">
+  <div class="section-container" style="max-width:440px;">
+    <div class="form-card" style="padding:36px 32px;">
+
+      <div class="auth-tabs">
+        <button type="button" class="auth-tab active" id="loginTabBtn">Login</button>
+        <button type="button" class="auth-tab" id="signupTabBtn">Sign Up</button>
+      </div>
+
+      <!-- ============ LOGIN FORM ============ -->
+      <form id="loginForm" novalidate>
+        <div class="form-group full">
+          <label for="loginEmail">Email</label>
+          <input type="text" id="loginEmail" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group full">
+          <label for="loginPassword">Password</label>
+          <input type="password" id="loginPassword" name="password" placeholder="Enter your password" required />
+        </div>
+        <div class="form-submit-row" style="flex-direction:column; align-items:stretch; gap:12px;">
+          <button type="submit" class="btn btn-primary" id="loginSubmitBtn" style="justify-content:center;">
+            <i class="fa-solid fa-right-to-bracket"></i> Log In
+          </button>
+          <span class="form-msg" id="loginMsg"></span>
+        </div>
+      </form>
+
+      <!-- ============ SIGN UP FORM ============ -->
+      <form id="signupForm" novalidate style="display:none;">
+        <div class="form-group full">
+          <label for="signupName">Full Name</label>
+          <input type="text" id="signupName" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group full">
+          <label for="signupEmail">Email</label>
+          <input type="text" id="signupEmail" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-group full">
+          <label for="signupPassword">Password</label>
+          <input type="password" id="signupPassword" name="password" placeholder="At least 6 characters" minlength="6" required />
+        </div>
+        <div class="form-group full">
+          <label for="signupConfirmPassword">Confirm Password</label>
+          <input type="password" id="signupConfirmPassword" name="confirmPassword" placeholder="Re-enter your password" minlength="6" required />
+        </div>
+        <div class="form-submit-row" style="flex-direction:column; align-items:stretch; gap:12px;">
+          <button type="submit" class="btn btn-primary" id="signupSubmitBtn" style="justify-content:center;">
+            <i class="fa-solid fa-user-plus"></i> Create Account
+          </button>
+          <span class="form-msg" id="signupMsg"></span>
+        </div>
+      </form>
+
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-container footer-grid">
+    <div>
+      <a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><span class="logo-text">PetConnect</span></a>
+      <p>Find your perfect companion. Give pets a loving home.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt a Pet</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p><i class="fa-solid fa-envelope"></i> hello@petconnect.com</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; 2026 PetConnect. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

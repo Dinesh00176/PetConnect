@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>My Pets - PetConnect</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<header class="navbar" id="navbar">
+  <div class="nav-container">
+    <a href="index.html" class="logo">
+      <span class="logo-icon"><i class="fa-solid fa-paw"></i></span>
+      <span class="logo-text">PetConnect<small>Find your perfect companion.</small></span>
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt</a>
+      <a href="addpet.html">Add a Pet</a>
+      <a href="mypets.html" id="myPetsLink" class="active" style="display:none;">My Pets</a>
+      <a href="adoptions.html">Adoption Records</a>
+      <a href="about.html">About Us</a>
+      <a href="index.html#how-it-works">How It Works</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <a href="login.html" class="btn btn-login" id="navAuthBtn"><i class="fa-regular fa-user"></i> Login / Sign Up</a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</header>
+
+<section class="featured" style="padding-top:60px;">
+  <div class="section-container">
+    <div class="section-header">
+      <h2><i class="fa-solid fa-paw"></i> My Pets</h2>
+      <a href="addpet.html" class="view-all">List a Pet <i class="fa-solid fa-plus"></i></a>
+    </div>
+    <p style="color:var(--text-light); margin-top:-24px; margin-bottom:32px; max-width:640px;">
+      Every pet you've listed on PetConnect, including ones still pending or already adopted. Only you can see and manage this page.
+    </p>
+
+    <div class="pet-grid" id="myPetsGrid">
+      <div class="state-box">
+        <i class="fa-solid fa-spinner fa-spin"></i>
+        <h3>Loading your pets...</h3>
+        <p>Fetching your listings from the database.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="section-container footer-grid">
+    <div>
+      <a href="index.html" class="logo footer-logo"><span class="logo-icon"><i class="fa-solid fa-paw"></i></span><span class="logo-text">PetConnect</span></a>
+      <p>Find your perfect companion. Give pets a loving home.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <a href="index.html">Home</a>
+      <a href="browse.html">Adopt a Pet</a>
+      <a href="about.html">About Us</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div>
+      <h5>Contact</h5>
+      <p><i class="fa-solid fa-envelope"></i> hello@petconnect.com</p>
+      <p><i class="fa-solid fa-phone"></i> +91 98765 43210</p>
+    </div>
+  </div>
+  <p class="footer-bottom">&copy; 2026 PetConnect. All rights reserved.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
