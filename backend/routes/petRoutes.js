@@ -1,19 +1,46 @@
 const express = require("express");
 const router = express.Router();
 
-const { addPet, getPets, getMyPets, getPetById, updatePet, deletePet } = require("../controllers/petController");
+const {
+  addPet,
+  getPets,
+  getMyPets,
+  getPetById,
+  updatePet,
+  deletePet,
+} = require("../controllers/petController");
+
 const upload = require("../middleware/upload");
 const { protect } = require("../middleware/auth");
 
-router.post("/", protect, upload.single("image"), addPet);
+// Add pet
+router.post(
+  "/",
+  protect,
+  upload.single("image"),
+  upload.uploadToCloudinary,
+  addPet
+);
+
+// Get all pets
 router.get("/", getPets);
 
-// NOTE: /mine must be registered before /:id — otherwise Express would treat
-// "mine" as an :id value and try (and fail) to look it up as a Mongo ObjectId.
+// Get logged-in user's pets
 router.get("/mine", protect, getMyPets);
 
+// Get single pet
 router.get("/:id", getPetById);
-router.put("/:id", protect, upload.single("image"), updatePet);
+
+// Update pet
+router.put(
+  "/:id",
+  protect,
+  upload.single("image"),
+  upload.uploadToCloudinary,
+  updatePet
+);
+
+// Delete pet
 router.delete("/:id", protect, deletePet);
 
 module.exports = router;
