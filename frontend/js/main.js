@@ -1,9 +1,9 @@
-// ============ API Config ============
-// Use the SAME hostname the page is loaded from (127.0.0.1 vs localhost matters
-// for cookies — browsers treat them as different sites, which breaks the login
-// session). Falls back to 'localhost' if opened directly as a file.
-const API_HOST = window.location.hostname || 'localhost';
-const API_BASE_URL = `http://${API_HOST}:5000`;
+
+const API_BASE_URL =
+  window.location.hostname === "localhost" ||
+  window.location.hostname === "127.0.0.1"
+    ? "http://localhost:5000"
+    : "https://petconnect-backend.vercel.app";
 
 // Builds a full image URL from the relative path stored in the DB
 function petImageUrl(pet) {
