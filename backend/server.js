@@ -181,28 +181,18 @@ app.use((err, req, res, next) => {
   });
 });
 
-// ======================================================
-// Local Development Server
-// ======================================================
-
-// IMPORTANT:
-// Vercel handles the server automatically.
-// Therefore, app.listen() is used ONLY locally.
-
 const PORT = process.env.PORT || 5000;
 
-if (process.env.NODE_ENV !== "production") {
-  app.listen(PORT, () => {
-    console.log(
-      `🚀 Server running in ${
-        process.env.NODE_ENV || "development"
-      } mode on port ${PORT}`
-    );
-  });
-}
+app.listen(PORT, "0.0.0.0", () => {
+  console.log(
+    `🚀 Server running in ${
+      process.env.NODE_ENV || "development"
+    } mode on port ${PORT}`
+  );
+});
 
 // ======================================================
-// Export App for Vercel
+// Export App
 // ======================================================
 
 module.exports = app;
