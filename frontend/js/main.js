@@ -3,7 +3,7 @@ const API_BASE_URL =
   window.location.hostname === "localhost" ||
   window.location.hostname === "127.0.0.1"
     ? "http://localhost:5000"
-    : "https://petconnect-backend.vercel.app";
+    : "https://petconnect-0zjs.onrender.com";
 
 // Builds a full image URL from the relative path stored in the DB
 function petImageUrl(pet) {
